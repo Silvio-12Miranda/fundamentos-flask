@@ -26,10 +26,14 @@ def contacto(nombre, edad):
 def query_string():
     print(request)
     print(request.args.get('param_one'))
-    print(request.args.get('param_two'))
+    print(request.args.get('param_two'))                    
     return 'OK'    
+
+def pagina_no_encontrada(error):
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
+    app.register_error_handler(404, pagina_no_encontrada)
     app.add_url_rule('/query_string', view_func= query_string)
     app.run()

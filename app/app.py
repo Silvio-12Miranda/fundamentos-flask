@@ -8,9 +8,9 @@ def index():
     data = {
     
         'titulo' : 'Index',
-        'Bienvenida' : 'Saludos',
+        'bienvenida' : 'Saludos',
         'cursos' : cursos ,
-        'Numero de cursos' : len(cursos)
+        'numero_cursos' : len(cursos)
     }
     return render_template('index.html', data = data)
 
